@@ -8,12 +8,12 @@ import { COLORS } from "../constants";
 
 const Tab = createBottomTabNavigator();
 
-const tabOptions = {
-    showLabel: false,
-    style: {
-        height: "10%",
-    },
-};
+// const tabOptions = {
+//     showLabel: false,
+//     style: {
+//         height: "10%",
+//     },
+// };
 
 const CameraButton = () => {
     return (
@@ -43,7 +43,6 @@ const Tabs = () => {
 
     return (
         <Tab.Navigator
-            tabBarOptions={tabOptions}
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
                     const tintColor = focused ? COLORS.primary : COLORS.gray;
@@ -102,7 +101,12 @@ const Tabs = () => {
                                 />
                             );
                     }
-                }
+                },
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarStyle: {
+                    height: '10%',
+                },
             })}
         >
             <Tab.Screen
